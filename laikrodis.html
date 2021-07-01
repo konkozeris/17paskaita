@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24valandos</title>
+</head>
+<style>
+    .laikrodis {
+        font-size: 50px;
+        font-family: fantasy;
+    }
+</style>
+<body>
+    <div class='laikrodis'>
+
+    </div>
+    <script>
+        'use strict';
+
+        setInterval(function() {
+            // console.log('labas')
+        
+
+        var data = new Date();
+        var isvedimoElementas = document.querySelector('.laikrodis');
+
+        console.log('data');
+
+        var rytasVakaras = 'AM';
+        
+        var h = data.getHours();
+        var m = data.getMinutes();
+        var s = data.getSeconds();
+        var diena = siosDienosData.getDay();
+    
+        
+
+        if (h < 10) {
+            h = "0" + h;
+        }
+
+        if (m < 10) {
+            m = "0" + m;
+        }
+
+        if (s < 10) {
+            s = "0" + s;
+        }
+
+        if (h >= 12) {
+            rytasVakaras ='PM';
+        }
+        if (h >= 12) {
+            h = h - 12;
+        }
+        
+        switch(diena) {
+            case 0:
+                console.log('sekmadienis');
+                break;
+            case 1:
+                console.log('pirmad');
+                break;
+            case 2:
+                console.log('antrad');
+                break;
+            case 3:
+                console.log('treciad');
+                break;
+            case 4:
+                console.log('ketvirtad');
+                break;
+            case 5:
+                console.log('penktad');
+                break;
+            case 6:
+                console.log('sestad');
+                break;
+            default:
+                console.log('tokios dienos nera');
+        }
+        // if( h < 13) {
+        //     rytasVakaras = 'AM';
+        // } else {
+        //     rytasVakaras = 'PM';
+        // }
+        isvedimoElementas.innerHTML = h + ":" + m + ":" + s + rytasVakaras + diena;
+        console.log(h);
+        console.log(m);
+        console.log(s);
+        console.log(diena)
+    }, 1000)
+    </script>
+</body>
+<script>
+    
+    
+</script>
+</html>
